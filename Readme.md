@@ -14,7 +14,8 @@ It runs 100% locally and does not access the Internet.
 ## link to 3-D printable washer stamp jig
 https://www.thingiverse.com/thing:4590734
 
-The following list of wallets support bip39 seed phrases.There are a lot more just do your own research.
+##If you use any of the following wallets then they support bip39 seed phrases.There are a lot more just do your own research.
+
 ## Hardware Wallets	Website
 Ledger	https://www.ledger.com/   
 Trezor	https://trezor.io/  
