@@ -4,11 +4,15 @@ This Python script generates BIP39 output indexes from a given seed phrase.
 These index numbers can then be stamped into stainless steel washers as a way to store your seed phrase that is safe from fire corrosion and floods.
 The following two YouTube videos give you examples on how to create your own. These examples stamp the Seed phrase Word into the washer.
 This can be very time-consuming for long words. This script converts your words into the bip39 index number so you can just stamp the number.
-Add an extra layer of security as many people wouldn't know What a bunch of washes and numbers are
+Add an extra layer of security as many people wouldn't know What a bunch of washers and numbers are
 https://youtu.be/EEyz7p9Aci8?si=DTWno46ocGE5nzQa
 https://youtu.be/3Aj_EHOu9WE?si=VRtZhSvuVW5_wwhU
 It runs 100% locally and does not access the Internet.
 **CAUTION!** Never enter your seed phrase into a webpage online. You can never trust where the information is going.
+
+
+## link to 3-D printable washer stamp jig
+https://www.thingiverse.com/thing:4590734
 
 The following list of wallets support bip39 seed phrases.There are a lot more just do your own research.
 ## Hardware Wallets	Website
