@@ -1,7 +1,7 @@
 # BIP39 Output Generator
 
 This Python script generates BIP39 output indexes from a given seed phrase.
-These index numbers can then be stamped into stainless steel washers as a way to store your seed phrase that is safe from fire corrosion and floods.
+These index numbers can then be stamped into stainless steel washers as a way to store your seed phrase that is safe from fire corrosion and floods. Step-by-step instructions can be found here https://blockmit.com/english/guides/diy/make-cold-wallet-washers/ .
 The following two YouTube videos give you examples on how to create your own. These examples stamp the Seed phrase Word into the washer.
 This can be very time-consuming for long words. This script converts your words into the bip39 index number so you can just stamp the number.
 Add an extra layer of security as many people wouldn't know What a bunch of washers and numbers are
