@@ -120,12 +120,12 @@ NUM_WORDS = 12 # Number of words in your seed phrase
 To use BIP39 Output Generator, follow these steps:
 
 ### 1. Run the script:
-
+```bash
 python getNumbersfromSeed.py
-
+```
 ### 2. If you have not hardcoded your seed phrase in the script, you will be prompted to enter it as follows:
 
-~/Documents/Python code/bip39 /opt/homebrew/bin/python3 "/Users/<user>/Documents/Python code/bip39/getNumbersfromSeed.py"  
+```bash
 
 Please enter 12 words: hello dog abandon detect dumb common tomato vanish print ridge zoo skate  
 
@@ -142,9 +142,9 @@ Please enter 12 words: hello dog abandon detect dumb common tomato vanish print 
 11 - 'zoo' : 2048  
 12 - 'skate' : 1617  
 [855, 517, 1, 484, 544, 372, 1825, 1931, 1367, 1485, 2048, 1617] . 
-
+```
 ### 3. If you Run the script with the test hardcoded seed you will get the following output:
-
+```bash
 ~/Documents/Python code/bip39 /opt/homebrew/bin/python3 "/Users/<user>/Documents/Python code/bip39/getNumbersfromSeed.py"   
  1 - 'hello' : 855   
  2 - 'dog' : 517    
@@ -159,12 +159,12 @@ Please enter 12 words: hello dog abandon detect dumb common tomato vanish print 
  11 - 'zoo' : 2048   
  12 - 'skate' : 1617   
 [855, 517, 1, 484, 544, 372, 1825, 1931, 1367, 1485, 2048, 1617] . 
-
+```
  ![Example washer stamping output template](Images/Sampleoutput.png)
 
 
 ### 4. When you need to get your seed phrase back run the script getSeedfromNumbers.py
-
+```bash
 python getSeedfromNumbers.py
 
 input 12 numbers from your stainless steel washers that correspond to words in the bip39 word#list 
@@ -186,9 +186,9 @@ Index 10: '1485' corresponds to the word 'ridge' in the bip39 wordlist.
 Index 11: '2048' corresponds to the word 'zoo' in the bip39 wordlist.  
 Index 12: '1617' corresponds to the word 'skate' in the bip39 wordlist.  
 [855, 517, 1, 484, 544, 372, 1825, 1931, 1367, 1485, 2048, 1617] . 
-
+```
 Entering your own Index numbers Will look like the following;
-
+```bash
 ~/Documents/Python code/bip39 /opt/homebrew/bin/python3 "/Users/<users>/Documents/Python code/bip39/getSeedfromNumbers.py"
 
 Please enter 12 Numbers in the correct order: 855 517 1 484 544 372 1825 1931 1367 1485 2048 1617  
@@ -206,7 +206,7 @@ Index 10: '1485' corresponds to the word 'ridge' in the bip39 wordlist.
 Index 11: '2048' corresponds to the word 'zoo' in the bip39 wordlist.  
 Index 12: '1617' corresponds to the word 'skate' in the bip39 wordlist.  
 [855, 517, 1, 484, 544, 372, 1825, 1931, 1367, 1485, 2048, 1617]  
-
+```
 ## Contributions/Bugs
 If you notice any bugs, please report it by opening an issue.
 
