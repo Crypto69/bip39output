@@ -112,10 +112,8 @@ NUM_WORDS = 24 # Number of words in your seed phrase
 Change it to
 
 ```python
-NUM_WORDS = 24 # Number of words in your seed phrase
+NUM_WORDS = 12 # Number of words in your seed phrase
 ```
-
-
 
 ## Using BIP39 Output Generator
 
