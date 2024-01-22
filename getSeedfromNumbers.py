@@ -8,8 +8,10 @@ import os
 import json
 
 offset = 0 # your custom offset to  bip39 wordlist 
+NUM_WORDS = 24 # number of words in your seed phrase
 indexList = []
 myIndexes = None
+seed = []
 # Load the bip39 wordlist
 with open('bip39_wordlist.json', 'r') as f:
     bip39_wordlist = json.load(f)
@@ -24,17 +26,18 @@ def find_word_from_index(index):
 
 # COMMENT out the line below to use your own indexes
 #myIndexes = [855, 517, 1, 484, 544, 372, 1825, 1931, 1367, 1485, 2048, 1617]
+#myIndexes = [855, 517, 1, 484, 544, 372, 1825, 1931, 1367, 1485, 2048, 1617,85, 57, 1, 44, 49, 72, 182, 131, 136, 485, 48, 167]
 
 if myIndexes is None:
-    # Prompt the user to input 12 numbers
+    # Prompt the user to input numbers stamped on the washers in the correct order
     while True:
         try:
-            indexes = list(map(int, input("Please enter 12 Numbers in the correct order: ").split()))
-            if len(indexes) != 12:
-                raise ValueError("Please enter exactly 12 numbers.")
+            indexes = list(map(int, input(f"Please enter '{NUM_WORDS}' Numbers  separated with a space in the correct order: ").split()))
+            if len(indexes) != NUM_WORDS:
+                raise ValueError(f"Please enter exactly {NUM_WORDS} numbers.")
             break
         except ValueError:
-            print("Invalid input. Please enter 12 numeric values separated by spaces.")
+            print(f"Invalid input. Please enter {NUM_WORDS} numeric values separated by spaces.")
 else:
     indexes = myIndexes
 
@@ -44,7 +47,17 @@ for i, index in enumerate(indexes, start=1):
     if word is not None:
         print(f"Index {i}: '{index}' corresponds to the word '{word}' in the bip39 wordlist.")
         indexList.append(index)
+        seed.append((word))    
+
     else:
         print(f"Index {i}: The index '{index}' is out of range.") 
+print()        # print a blank line
 
+
+for i, word in enumerate(seed, start=1):
+    print(f"{i} : {word}")
+
+print()        # print a blank line   
 print(indexList)
+
+

@@ -1,5 +1,5 @@
 # This is a simple python script that will take 12 words and look them up in the bip39 wordlist to find the corresponding index numbers. 
-# input 12 words And The App Will look them up in A local copy of the bip39 wordlist to find the corresponding index numbers. It will then Print the words and their index numbers.
+# input 12 or 24 words And The App Will look them up in A local copy of the bip39 wordlist to find the corresponding index numbers. It will then Print the words and their index numbers.
 # It does this all locally , not on the web. **CAUTION!** Never enter your seed phrase into any website or app that is connected to the Internet
 # You can verify your results against the official [bip39 wordlist] Which can be found here: https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt
 # You can then use the generated index numbers to create A fire resistant copy of your seed phrase that is obfuscated by using bip39 Word number
@@ -10,13 +10,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-NUM_WORDS = 12 # number of words in your seed phrase
+NUM_WORDS = 24 # Number of words in your seed phrase
 OFFSET = 0 # your custom offset to  bip39 wordlist indexes (the number of the bip39 word)
 indexList = []
 mySeed = None
 
 # test seed words.  **CAUTION!** I do not recommend Saving your actual seed in the code Just use this to satisfy yourself the code is outputting the right results
 # mySeed = ["Hello", "dog", "Abandon", "Detect", "dumb", "common", "tomato", "vanish", "print", "ridge", "zoo", "skate"] 
+
 # Will generate the following output
 #  1 - 'hello' : 855 
 #  2 - 'dog' : 517 
@@ -34,6 +35,7 @@ mySeed = None
 
 # Comment this Next line of code In order to enter your seed words at the prompt, or uncomment it to use the test seed words above
 #mySeed = ["Hello", "dog", "Abandon", "Detect", "dumb", "common", "tomato", "vanish", "print", "ridge", "zoo", "skate"] 
+#mySeed =['hello', 'dog', 'abandon', 'detect', 'dumb', 'common', 'tomato', 'vanish', 'print', 'ridge', 'zoo', 'skate', 'appear', 'alpha', 'abandon', 'air', 'alcohol', 'angry', 'birth', 'aware', 'axis', 'develop', 'album', 'below']
 
 def load_wordlist(filename):
     """Load the bip39 wordlist from a file."""
@@ -51,7 +53,7 @@ def get_words(seed=None):
     """Get the seed words. If no seed is provided, prompt the user for input."""
     if seed is None:
         while True:
-            words = input(f"Please enter {NUM_WORDS} words: ").split()
+            words = input(f"Please enter {NUM_WORDS} seed words separated by a space: ").split()
             if len(words) != NUM_WORDS:
                 print(f"Error: Please enter exactly {NUM_WORDS} words separated by spaces.")
             else:
@@ -87,11 +89,11 @@ def draw_washer_template(numbers):
             ax.text(x, y, char, rotation=rotation, ha='center', va='center')
 
     # Create a new figure with a specific size
-    fig, ax = plt.subplots(figsize=(10, 8))
+    fig, ax = plt.subplots(figsize=(12, 10))
 
     # Calculate the x and y coordinates for the centers of the circles
-    x = np.linspace(0.2, 0.8, 4)
-    y = np.linspace(0.8, 0.2, 3)
+    x = np.linspace(0.1, 1.2, 6)
+    y = np.linspace(1.1, 0.1, 4)
     X, Y = np.meshgrid(x, y)
 
     # Loop over the list of numbers and their indices
@@ -99,7 +101,7 @@ def draw_washer_template(numbers):
         center = (X.flatten()[i], Y.flatten()[i])
         # Draw a circle at the corresponding grid position
         circle = plt.Circle(center, 0.1, edgecolor='black', facecolor='none')
-        ax.add_patch(circle)
+        ax.add_patch(circle)  # Adjusted indentation
         # Draw a smaller circle inside the outer circle
         inner_circle = plt.Circle(center, 0.04, edgecolor='Black', facecolor='white')
         ax.add_patch(inner_circle)
@@ -109,8 +111,8 @@ def draw_washer_template(numbers):
         draw_text_on_arc(center, 0.08, str(num), ax)
 
     # Set the x and y limits to include all circles
-    ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
+    ax.set_xlim(0, 1.4)
+    ax.set_ylim(0, 1.2)
 
     # Remove the axis
     ax.axis('off')

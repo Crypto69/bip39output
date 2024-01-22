@@ -3,13 +3,15 @@
 This Python script generates BIP39 output indexes from a given seed phrase.
 These index numbers can then be stamped into stainless steel washers as a way to store your seed phrase that is safe from fire corrosion and floods. Step-by-step instructions can be found here https://blockmit.com/english/guides/diy/make-cold-wallet-washers/ .
 The following two YouTube videos give you examples on how to create your own. These examples stamp the Seed phrase Word into the washer.
-This can be very time-consuming for long words. This script converts your words into the bip39 index number so you can just stamp the number.
-Add an extra layer of security as many people wouldn't know What a bunch of washers and numbers are
+This can be very time-consuming for long words. This script converts your words into the bip39 index number so you can just stamp the number instead of your seeded word. 
+This adds an extra layer of security as many people wouldn't know What a bunch of washers and numbers are
 https://youtu.be/EEyz7p9Aci8?si=DTWno46ocGE5nzQa
 https://youtu.be/3Aj_EHOu9WE?si=VRtZhSvuVW5_wwhU
 It runs 100% locally and does not access the Internet.
 **CAUTION!** Never enter your seed phrase into a webpage online. You can never trust where the information is going.
 
+## Read more about bip39 word list
+https://getcoinplate.com/blog/official-bip39-word-list-mnemonic-in-english-verified/
 
 ## link to 3-D printable washer stamp jig
 https://www.thingiverse.com/thing:4590734
@@ -100,6 +102,19 @@ git clone https://github.com/yourusername/bip39output.git
 2. Navigate to the project directory:
 
 cd bip39output
+
+The script defaults to 24 words seed phrases. If you have 12 words then Change the variable in the script from 24 to 12.
+
+```python
+NUM_WORDS = 24 # Number of words in your seed phrase
+```
+
+Change it to
+
+```python
+NUM_WORDS = 24 # Number of words in your seed phrase
+```
+
 
 
 ## Using BIP39 Output Generator
